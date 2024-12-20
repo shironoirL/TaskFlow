@@ -1,8 +1,10 @@
-from sqlalchemy import Column, String, Text, Enum, ForeignKey, Integer
+import enum
+
+from sqlalchemy import Column, Enum, ForeignKey, Integer, String, Text
+from sqlalchemy.orm import relationship
+
 from app.core.db import Base
 from app.models.base import TimeStampMixin
-from sqlalchemy.orm import relationship
-import enum
 
 
 class TaskStatus(str, enum.Enum):

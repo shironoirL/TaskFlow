@@ -1,7 +1,8 @@
-from sqlalchemy import Column, String, Text, ForeignKey, Integer
+from sqlalchemy import Column, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import relationship
-from app.models.base import TimeStampMixin
+
 from app.core.db import Base
+from app.models.base import TimeStampMixin
 
 
 class Project(TimeStampMixin, Base):
