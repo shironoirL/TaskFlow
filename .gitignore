@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+/personal_use/
+/app/core/test_connection.py
+.idea/
+.env
