@@ -6,7 +6,7 @@ from sqlalchemy import pool
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from app.core.db import DATABASE_URL, Base
-from app.models import Project, Task, User  # Подключаем модели
+from app.models import Project, Task, User
 
 config = context.config
 config.set_main_option("sqlalchemy.url", DATABASE_URL)
@@ -18,7 +18,6 @@ target_metadata = Base.metadata
 
 
 def run_migrations_offline():
-    """Запуск миграций в оффлайн-режиме (без подключения к БД)."""
     url = config.get_main_option("sqlalchemy.url")
     context.configure(
         url=url,

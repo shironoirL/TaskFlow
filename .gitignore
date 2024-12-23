@@ -5,3 +5,4 @@ __pycache__/
 /app/core/test_connection.py
 .idea/
 .env
+/logs/

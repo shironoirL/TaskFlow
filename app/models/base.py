@@ -1,14 +1,14 @@
-from sqlalchemy import Column, DateTime, Integer, func
-
-from app.core.db import Base
+from sqlalchemy import Column, DateTime, Integer, func, text
 
 
 class TimeStampMixin:
     id = Column(Integer, primary_key=True, index=True)
     created_at = Column(
         DateTime(timezone=True),
-        server_default=func.now(),
+        server_default=text("TIMEZONE('Europe/Moscow', NOW())"),
     )
     updated_at = Column(
-        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
+        DateTime(timezone=True),
+        server_default=text("TIMEZONE('Europe/Moscow', NOW())"),
+        onupdate=text("TIMEZONE('Europe/Moscow', NOW())"),
     )
